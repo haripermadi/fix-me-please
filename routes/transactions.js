@@ -1,8 +1,10 @@
 const express = require('express');
 const router = express.Router()
-var transactionController = require('../controller/transactions');
+const {all, create, update, deleted} = require('../controllers/transactions');
 
-router.get('/', transactionsController.all)
-router.post('/', transactionsController.create)
-router.put('/:id', transactionsController.update)
-router.delete('/:id', transactionsController.delete)
+router.get('/', all)
+router.post('/', create)
+router.put('/:id', update)
+router.delete('/:id', deleted)
+
+module.exports = router
